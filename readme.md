@@ -22,7 +22,7 @@ crear un pod multi-container para así aprender cómo los containers dentro del 
 5. Una vez creados los mismos chequear su estado
 
 
-6. Crear un deployment llamado "webapp" con una imagen de nginx con 5 replicas. Luego:
+6. Crear un deployment llamado "webapp" con una imagen de nginx con 2 replicas. Luego:
 
     Obtener el deployment creado y mostrar tus labels 
 
@@ -30,7 +30,7 @@ crear un pod multi-container para así aprender cómo los containers dentro del 
   
     Mostrar los pods corriendo del deployment 
   
-    Escalar el deployment de 5 a 20 replicas y verificar que funciona correctamente 
+    Escalar el deployment de 2 a 5 replicas y verificar que funciona correctamente 
   
     Obtener el estado del scale-up del deployment 
   
