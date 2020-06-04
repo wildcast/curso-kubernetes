@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-multicontainer
+  labels:
+    app: busybox
+spec:
+  containers:
+  - name: busybox-ls-sleep
+    image: busybox
+    command: ["/bin/sh"]
+    args: ["-c", "ls; sleep 3600"]
+  - name: busybox-hello-world-ls-sleep
+    image: busybox
+    command: ["/bin/sh"]
+    args: ["-c", "echo \"Hello World\"; sleep 3600"]
+  - name: busybox-echo-ls-sleep
+    image: busybox
+    command: ["/bin/sh"]
+    args: ["-c", "echo \"Este es el 3er contenedor\"; sleep 3600"]
