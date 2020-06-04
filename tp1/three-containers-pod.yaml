@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: three-containers
+
+spec:
+  restartPolicy: Never
+
+  containers:
+    - name: ls-container
+      image: busybox
+      command: ["/bin/sh"]
+      args: ["-c", "ls; sleep 3600"]
+
+    - name: hello-world-container
+      image: busybox
+      command: ["/bin/sh"]
+      args: ["-c", "echo \"Hello World\"; sleep 3600"]
+
+    - name: third-container
+      image: busybox
+      command: ["/bin/sh"]
+      args: ["-c", "echo \"Este es el 3er contenedor\"; sleep 3600"]

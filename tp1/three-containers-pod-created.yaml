@@ -1,0 +1,220 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2020-04-20T15:17:07Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:containers:
+          k:{"name":"hello-world-container"}:
+            .: {}
+            f:args: {}
+            f:command: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:resources: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+          k:{"name":"ls-container"}:
+            .: {}
+            f:args: {}
+            f:command: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:resources: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+          k:{"name":"third-container"}:
+            .: {}
+            f:args: {}
+            f:command: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:resources: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+        f:dnsPolicy: {}
+        f:enableServiceLinks: {}
+        f:restartPolicy: {}
+        f:schedulerName: {}
+        f:securityContext: {}
+        f:terminationGracePeriodSeconds: {}
+    manager: kubectl
+    operation: Update
+    time: "2020-04-20T15:17:07Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"ContainersReady"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Initialized"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Ready"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+        f:containerStatuses: {}
+        f:hostIP: {}
+        f:phase: {}
+        f:podIP: {}
+        f:podIPs:
+          .: {}
+          k:{"ip":"100.64.1.35"}:
+            .: {}
+            f:ip: {}
+        f:startTime: {}
+    manager: kubelet
+    operation: Update
+    time: "2020-04-20T15:17:17Z"
+  name: three-containers
+  namespace: default
+  resourceVersion: "12690929825"
+  selfLink: /api/v1/namespaces/default/pods/three-containers
+  uid: 2d2ab96a-d604-424c-b4f1-8fd521def972
+spec:
+  containers:
+  - args:
+    - -c
+    - ls; sleep 3600
+    command:
+    - /bin/sh
+    image: busybox
+    imagePullPolicy: Always
+    name: ls-container
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-n84j2
+      readOnly: true
+  - args:
+    - -c
+    - echo "Hello World"; sleep 3600
+    command:
+    - /bin/sh
+    image: busybox
+    imagePullPolicy: Always
+    name: hello-world-container
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-n84j2
+      readOnly: true
+  - args:
+    - -c
+    - echo "Este es el 3er contenedor"; sleep 3600
+    command:
+    - /bin/sh
+    image: busybox
+    imagePullPolicy: Always
+    name: third-container
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-n84j2
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: scw-k8s-florencia-default-850331140fb04c7e9e7b
+  priority: 0
+  restartPolicy: Never
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: default-token-n84j2
+    secret:
+      defaultMode: 420
+      secretName: default-token-n84j2
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2020-04-20T15:17:04Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2020-04-20T15:17:14Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2020-04-20T15:17:14Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2020-04-20T15:17:07Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://e3b62ce319e4ea5f389e53dd449cf630126210c2d71d782223e7d9f322f79121
+    image: busybox:latest
+    imageID: docker-pullable://busybox@sha256:a8cf7ff6367c2afa2a90acd081b484cbded349a7076e7bdf37a05279f276bc12
+    lastState: {}
+    name: hello-world-container
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2020-04-20T15:17:11Z"
+  - containerID: docker://a08b4b1dc8315758aaa1219fd8f334a5261d85526c2ff2ad0eeda92f438e13c1
+    image: busybox:latest
+    imageID: docker-pullable://busybox@sha256:a8cf7ff6367c2afa2a90acd081b484cbded349a7076e7bdf37a05279f276bc12
+    lastState: {}
+    name: ls-container
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2020-04-20T15:17:09Z"
+  - containerID: docker://22415361e69dd79d74fe2599bd4adcab38b0ab99f121cfe7d170f420e1bbffdf
+    image: busybox:latest
+    imageID: docker-pullable://busybox@sha256:a8cf7ff6367c2afa2a90acd081b484cbded349a7076e7bdf37a05279f276bc12
+    lastState: {}
+    name: third-container
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2020-04-20T15:17:13Z"
+  hostIP: 10.64.4.185
+  phase: Running
+  podIP: 100.64.1.35
+  podIPs:
+  - ip: 100.64.1.35
+  qosClass: BestEffort
+  startTime: "2020-04-20T15:17:04Z"
