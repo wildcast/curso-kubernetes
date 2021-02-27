@@ -13,7 +13,7 @@
    1. `kubectl get pods` para ver que existan
    2. `kubectl describe pod trifle` para chequear los eventos y alguna descripción más interesante
    3. `kubectl logs trifle --follow --all-containers` para hacer como un watch de los logs de todos los containers del pods. Es obligatorio especificar el nombre del container o pasarle el flag de all-containers para que el CLI sepa que logs ir a buscar.
-6. Crear un deployment llamado `webapp` con una imagen de nginx con 2 replicas. Luego:
+6. Crear un deployment llamado `webapp` con una imagen de nginx con 2 replicas (`kubectl create deploymen webapp --image=ngninx --replicas=2`). Luego:
 	* Obtener el deployment creado y mostrar tus labels 
 	* Obtener el archivo yaml del deployment creado 
 	* Mostrar los pods corriendo del deployment 
