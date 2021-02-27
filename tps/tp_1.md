@@ -1,4 +1,5 @@
 # TP1
+0. Me paro en el cluster de minikube para arrancar con el TP `kubectl config use-context minikube`
 1. Listar todos los namespaces en un cluster
 2. Listar todos los PODS en todos los namespaces
 3. Listar los pods en un namespace en particular
