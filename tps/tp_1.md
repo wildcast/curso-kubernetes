@@ -14,9 +14,9 @@
    2. `kubectl describe pod trifle` para chequear los eventos y alguna descripción más interesante
    3. `kubectl logs trifle --follow --all-containers` para hacer como un watch de los logs de todos los containers del pods. Es obligatorio especificar el nombre del container o pasarle el flag de all-containers para que el CLI sepa que logs ir a buscar.
 6. Crear un deployment llamado `webapp` con una imagen de nginx con 2 replicas (`kubectl create deploymen webapp --image=ngninx --replicas=2`). Luego:
-	* Obtener el deployment creado y mostrar tus labels 
-	* Obtener el archivo yaml del deployment creado 
-	* Mostrar los pods corriendo del deployment 
-	* Escalar el deployment de 2 a 5 replicas y verificar que funciona correctamente 
-	* Obtener el estado del scale-up del deployment 
-	* Mostrar el replicaset creado por el deployment
+	* Obtener el deployment creado y mostrar tus labels: `kubectl get deploy webapp --show-labels`
+	* Obtener el archivo yaml del deployment creado: `kubectl get deploy webapp -o yaml`
+	* Mostrar los pods corriendo del deployment: `kubectl get pods --selector app=webapp`
+	* Escalar el deployment de 2 a 5 replicas y verificar que funciona correctamente: `kubectl sacale deployment webapp --replicas=5`
+	* Obtener el estado del scale-up del deployment: `kubectl get deploy webapp`
+	* Mostrar el replicaset creado por el deployment: `kubectl get rs --selector app=webapp`
