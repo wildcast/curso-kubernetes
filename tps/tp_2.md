@@ -9,7 +9,7 @@
 6. Actualizen ese deployment con una imagen invalida. Luego de ver que los pods no se pueden crear aborten el rollout actual
    - Para 5 y 6: `kubectl edit deploy nginx` y modificar `spec.template.spec.containers.image`
    - `kubectl rollout undo deployment nginx` para deshacer el cambio de la versión inválida
-7. Escalen su `Deployment` a 6 replicas y:
+7. Escalen su `Deployment` a 6 replicas y: `kubectl scale deploy nginx --replicas=6`
 	* Configuren el rolling update para que reemplaze de a 2 containers a la vez,
 	* Actualizen la imagen y analizen como los pods y replicasets van cambiando,
 	* Configuren el rolling update para que reemplaze un 50% de containers a la vez,
